@@ -1,0 +1,115 @@
+@font-face{
+    font-family: Poppins;
+    src: url(Poppins-Regular.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, monospace;
+}
+
+body{
+    background-color: rgba(135, 207, 235, 0.2);
+    display: grid;
+    place-items: center;
+    height: 80vh;
+}
+
+.container{
+    width: 90vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template:
+    "top top"
+    "middle middle"
+    "bottom bottom";
+    gap: 20px;
+}
+
+.intro{
+    text-align: center;
+    grid-area: top;
+}
+
+.intro p{
+    font-size: 0.9em;
+}
+
+.landscape{
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px grey;
+    grid-area: middle;
+}
+
+.description{
+    grid-area: bottom;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 5px gray;
+    background-color: whitesmoke;
+}
+
+.buttons{
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn{
+    width: 100%;
+    margin: 0;
+    border: none;
+    padding: 10px;
+    font-size: 1em;
+    background-color: lightgrey;
+    transition: all 0.3s ease;
+}
+
+.btn:hover:not(.active){
+    background-color: lightblue;
+}
+
+.btn.active{
+    background-color: whitesmoke;
+}
+
+.text{
+    width: 100%;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+.text h3{
+    text-transform: capitalize;
+}
+
+.content{
+    display: none;
+}
+
+.content.active{
+    display: block;
+}
+
+@media screen and (min-width:768px){
+    .container{
+        grid-template: 
+        "top top"
+        "middle bottom"
+        ". .";
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .description{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 950px){
+    .container{
+        width: 930px;
+    }
+}
